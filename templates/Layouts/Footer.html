@@ -1,0 +1,89 @@
+{% load static %}
+<!-------------------------------------------- Footer ------------------------------------------------------>
+<div class="img-upper text-center mt-5">
+    <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+</div>
+<footer class="px-5 pt-5 pb-0 bg-dark">
+    <div class="container">
+        <div class="row">
+            <!-------------------------------------------- Links ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-0 order-md-0 pt-3 pt-md-0">
+                <p class="h4 footer-link-title text-center text-md-right">لینک های مفید</p>
+                <ul class="list-unstyled text-center text-md-right">
+                    <li>
+                        <a href="{% url 'home_page' %}" class="footer-link">صفحه اصلی</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">تماس با ما</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'Product:product_list' %}" class="footer-link">محصولات</a>
+                    </li>
+                </ul>
+            </div>
+            <!-------------------------------------------- Location ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-1 order-md-2 pt-3 pt-md-0">
+                <p class="footer-link-title text-light h4 text-center text-md-right">راههای ارتباطی</p>
+                <ul class="list-unstyled text-center text-md-right">
+                    <li>
+                            <span class="footer-text-icon px-1">
+                                <i class="las la-map-marker"></i>
+                            </span>
+                        <span class="footer-link">ایران , مشهد</span>
+                    </li>
+                    <li class="pt-1">
+                        <a href="#" class="footer-link">
+                                <span class="footer-text-icon px-1">
+                                    <i class="las la-phone"></i>
+                                </span>
+                            <a href="tel:05133232333" class="footer-link">051-3323-2333</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                                <span class="footer-text-icon px-1">
+                                    <i class="las la-mobile"></i>
+                                </span>
+                            <a href="tel:+989150899335" class="footer-link">09150899335</a>
+                        </a>
+                    </li>
+                    <li class="footer-link-c">
+                            <span class="footer-text-icon px-1">
+                                <i class="las la-headset"></i>
+                            </span>
+                        پشتیبانی : <a href="#" class="footer-link">3234-3239-051</a>
+                    </li>
+                </ul>
+            </div>
+            <!-------------------------------------------- Logo ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-3 order-md-3">
+                <div class="d-block d-md-flex justify-content-end">
+                    <div class="d-flex justify-content-center mt-3 mt-md-0">
+                        <div class="footer-logo">
+                            <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------- Icons ------------------------------------------------------>
+    <div class="d-flex justify-content-center mt-4 back-line">
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-telegram"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+    </div>
+    <p class="text-muted text-center mt-3 pb-3 mb-0">طراحی شده توسط جواد محمدی</p>
+</footer>

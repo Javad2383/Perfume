@@ -1,0 +1,337 @@
+{% extends '_mainLayout.html' %}
+{% load static %}
+{% block main_content %}
+    <!--------------------------- Address --------------------------------------------->
+    <ul class="breadcrumb px-5 pt-4 container product-page">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home_page' %}" class="breadcrumb-link">صفحه اصلی</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'Product:product_list' %}" class="breadcrumb-link">عطر ها</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{% url 'Product:product_detail' pk=object.id slug=object.slug %}" class="breadcrumb-link">{{ object.title }}</a>
+        </li>
+    </ul>
+    <!--------------------------- Specifications --------------------------------------------->
+    <section class="my-5 ">
+        <div class="container">
+            <div class="img-upper text-center">
+                <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="py-3 px-2 main-border">
+                <div class="row">
+                    <!--------------------------- Image --------------------------------------------->
+                    <div class="col-10 col-md-4 mx-auto">
+                        <img src="{{ object.image.url }}" class="img-fluid"
+                             alt="First">
+                        <!--------------------------- Img Overlay --------------------------------------------->
+                        <div class="card-img-overlay d-block justify-content-around img-overlay-product px-5">
+                            <!--------------------------- heart --------------------------------------------->
+                            <p>
+                                <a href="#" class="img-overlay-icon-heart" data-toggle="tooltip" data-placement="left"
+                                   title="پسندیدن">
+                                    <i class="lar la-heart"></i>
+                                </a>
+                            </p>
+                            <!--------------------------- share --------------------------------------------->
+                            <p>
+                                <a href="#" class="img-overlay-icon-share pt-0 mt-0" data-toggle="tooltip"
+                                   data-placement="left" title="اشتراک گزاری">
+                                    <i class="lar la-share-square"></i>
+                                </a>
+                            </p>
+                            <!--------------------------- check --------------------------------------------->
+                            <p>
+                                <a href="#" class="img-overlay-icon-check pt-0 mt-0" data-toggle="tooltip"
+                                   data-placement="left" title="بررسی محصول">
+                                    <i class="lar la-clipboard"></i>
+                                </a>
+                            </p>
+                        </div>
+                        <!--------------------------- Img bottom --------------------------------------------->
+                    </div>
+                    <!--------------------------- Details --------------------------------------------->
+                    <div class="col-10 col-md-8 mx-auto ">
+                        <!--------------------------- Upper --------------------------------------------->
+                        <div class="d-block d-md-flex justify-content-between pl-5 border-bottom">
+                            <h1 class="h3 text-center pt-3 pt-md-0">Mugler Alien Man</h1>
+                            <div class="pl-5 text-center pb-3 pb-md-0">
+                                <span>4.5</span>
+                                <span class="star-product m-0 ">
+                                <i class="las la-star"></i>
+                            </span>
+                            </div>
+                        </div>
+                        <!--------------------------- Lower --------------------------------------------->
+                        <div class="d-flex justify-content-start justify-content-md-around border-bottom">
+                            <ul>
+                                <li class="details-item">
+                                    برند : <span class="details-inner-text"> Mugler </span>
+                                </li>
+                                <li class="details-item">
+                                    سازنده : <span class="details-inner-text"> فرانسه </span>
+                                </li>
+                                <li class="details-item">
+                                    سال معرفی : <span class="details-inner-text">2020</span>
+                                </li>
+                                <li class="details-item">
+                                    جنسیت عطر : <span class="details-inner-text"> مردانه </span>
+                                </li>
+                            </ul>
+                            <ul class="d-none d-md-block">
+                                <li class="details-item">
+                                    برند : <span class="details-inner-text"> Mugler </span>
+                                </li>
+                                <li class="details-item">
+                                    سازنده : <span class="details-inner-text"> فرانسه </span>
+                                </li>
+                                <li class="details-item">
+                                    سال معرفی : <span class="details-inner-text">2020</span>
+                                </li>
+                                <li class="details-item">
+                                    جنسیت عطر : <span class="details-inner-text"> مردانه </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--------------------------- Button --------------------------------------------->
+                        <div class="d-block d-md-flex justify-content-around px-0 px-md-5">
+                            <div class="border-price mx-auto mt-2 mb-3 order-md-1">
+                                <p class="text-center p-0 m-0">{{ object.price }} تومان </p>
+                            </div>
+                            <div class="d-flex justify-content-center mt-2 pb-3 order-md-0">
+                                <button class="btn details-btn text-center">
+                                    افزودن به سبد خرید
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------- Service ---------------------------------------------->
+    <section class="mt-5">
+        <div class="container">
+            <div class="img-upper text-center">
+                <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 mx-auto">
+                    <div class="main-border shadow-sm">
+                        <div class="row pt-3">
+                            <div class="col-10 col-md-3 mx-auto">
+                                <div class="d-flex justify-content-between justify-content-md-center px-5 px-md-0">
+                                    <figure class="service-icon">
+                                        <i class="las la-history"></i>
+                                    </figure>
+                                    <div class="text-right">
+                                        <p>ضمانت <br> کالا</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-3 mx-auto service-line ">
+                                <div class="d-flex justify-content-between justify-content-md-center px-5 px-md-0">
+                                    <figure class="service-icon">
+                                        <i class="las la-headset"></i>
+                                    </figure>
+                                    <div class="text-right">
+                                        <p>پشتیبانی <br> 24 ساعته</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-3 mx-auto service-line">
+                                <div class="d-flex justify-content-between justify-content-md-center px-5 px-md-0">
+                                    <figure class="service-icon">
+                                        <i class="las la-truck-moving"></i>
+                                    </figure>
+                                    <div class="text-right">
+                                        <p>اسرال رایگان <br> سرار کشور</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-3 mx-auto service-line">
+                                <div class="d-flex justify-content-between justify-content-md-center px-5 px-md-0">
+                                    <figure class="service-icon">
+                                        <i class="las la-clock"></i>
+                                    </figure>
+                                    <div class="text-right">
+                                        <p>ارسال فوری<br> در مشهد</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--------------------------- Main --------------------------------------------->
+    <section class="mt-5">
+        <div class="container">
+            <div class="img-upper text-center">
+                <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="main-border">
+                <nav>
+                    <!--------------------------- Buttons --------------------------------------------->
+                    <div class="nav nav-tabs nav-bottom px-3 pt-1" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="details-col-btn" data-toggle="tab" href="#details-item"
+                           role="tab" aria-controls="details-item" aria-selected="true">مشخصات</a>
+                        <a class="nav-item nav-link" id="check-col-btn" data-toggle="tab" href="#check-item"
+                           role="tab" aria-controls="check-item" aria-selected="false">بررسی</a>
+                        <a class="nav-item nav-link" id="comment-col-btn" data-toggle="tab" href="#comment-item"
+                           role="tab" aria-controls="comment-item" aria-selected="false">نظرات کاربران</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <!--------------------------- details Item --------------------------------------------->
+                    <div class="px-5 py-2 tab-pane fade show active" id="details-item" role="tabpanel"
+                         aria-labelledby="nav-home-tab">
+                        <table class="table">
+                            <tr>
+                                <td class="table-a">حجم</td>
+                                <td>100ml</td>
+                            </tr>
+                            <tr>
+                                <td class="table-a">جنسیت عطر</td>
+                                <td>مردانه</td>
+                            </tr>
+                            <tr>
+                                <td class="table-a">گروه های بویای</td>
+                                <td>شرقی چوبی</td>
+                            </tr>
+
+                            <td class="table-a">طبع رایحه</td>
+                            <td>گرم و شیرین</td>
+                            </tr>
+                            <tr>
+                                <td class="table-a">سال معرفی</td>
+                                <td>2020</td>
+                            </tr>
+                            <tr>
+                                <td class="table-a">مناسب سن</td>
+                                <td>25 تا 40</td>
+                            </tr>
+                            <tr>
+                                <td class="table-a">کشور مبدا</td>
+                                <td>فرانسه</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--------------------------- check Item --------------------------------------------->
+                    <div class="px-5 py-4 tab-pane fade" id="check-item" role="tabpanel"
+                         aria-labelledby="nav-profile-tab">
+                        <p class="h5 text-right">
+                            {{ object.description }}
+                        </p>
+                    </div>
+                    <!--------------------------- comment Item --------------------------------------------->
+                    <div class="px-5 py-4 tab-pane fade" id="comment-item" role="tabpanel"
+                         aria-labelledby="nav-contact-tab">
+                        <div class="border rounded">
+                            <div class="row">
+                                <div class="col-12 col-md-2">
+                                    <div class="d-flex justify-content-center align-items-center h-100 p-3">
+                                        <img src="https://via.placeholder.com/100x100.jpg?text=User Image"
+                                             class="img-fluid img-circle rounded-circle" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <div class="p-3">
+                                        <p class="h4 text-center text-md-right">جواد محمدی</p>
+                                        <p class="text-muted text-center text-md-right">لورم ایپسوم متنی است ساختگی</p>
+                                        <span class="badge badge-info">{{ object.time | timesince }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 border-top p-2 px-0 px-md-4">
+                            <p class="h4">شما هم میتوانید در مورد این کالا نظر بدهید</p>
+                            <p class="text-muted">برای ثبت نظر لازم است ابتدا وارد شوید</p>
+                            <button class="btn btn-warning">ثبت نظر</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------- related --------------------------------------------->
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <div class="img-upper text-center">
+                <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 mx-auto">
+                    <div class="main-border shadow-sm">
+                        <div class="b-border px-3 py-4">
+                            <p class="h3 text-center order-0">محصولات مرتبط</p>
+                        </div>
+                        <div>
+                            <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
+                                 data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
+                                 data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
+                                 data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
+                                 data-xl-nav="true" data-dots="false">
+                                <!-------------------------------------------- Items ------------------------------------------------------>
+                                <div class="item">
+                                    <div class="card main-card">
+                                        <img src="{% static 'ViewDist/IMG/3.jpg' %}" class="img-fluid card-img-top w-auto"
+                                            alt="First">
+                                        <div class="card-img-overlay">
+                                            <p><a href="#" class="card-link img-overlay-c">
+                                                    <i class="fas fa-male"></i>
+                                                </a></p>
+                                            <p><a href="#" class="card-link img-overlay-c">
+                                                    <i class="fas fa-sun"></i>
+                                                </a></p>
+                                        </div>
+                                        <div class="card-body card-cursor">
+                                            <div class=" d-flex justify-content-center">
+                                                <p class="star-parent">
+                                                    <i class="far fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                            </div>
+                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
+                                            <div class="d-md-flex d-block justify-content-around">
+                                                <p class="text-center">
+                                                    <del>1,210,400</del>
+                                                </p>
+                                                <p class="text-center">1,200,000 تومان</p>
+                                            </div>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                    <i class="las la-share"></i>
+                                                </button>
+                                                <button class="btn orange-btn btn-text p-2 mr-1">
+                                                    افزودن به سبد خرید
+                                                </button>
+                                                <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

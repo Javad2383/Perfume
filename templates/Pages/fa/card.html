@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../ViewDist///css/plugins.css">
+    <link rel="stylesheet" href="../../ViewDist//css/Main.css">
+    <title>Perfume</title>
+</head>
+
+<body>
+    <!-------------------------------------------- Header ------------------------------------------------------>
+    <header>
+        <!-------------------------------------------- Hide Navbar ------------------------------------------------------>
+        <!-------------------------------------------- Button ------------------------------------------------------>
+        <div class="hide-nav-btn py-3 px-4 d-block d-md-none" id="HideOverlay">
+            <button class="btn mb-0">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+        </div>
+        <!-------------------------------------------- Hide Div ------------------------------------------------------>
+        <div class="ovarlay"></div>
+        <div class="inner-overlay">
+            <button class="close-btn px-4 py-2" id="CloseOverlay">
+                &times;
+            </button>
+            <ul class="list-unstyled text-right px-3 overlay-list">
+                <li class="overlay-item">
+                    <a href="../../index.html" class="overlay-link">صفحه اصلی</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="products.html" class="overlay-link">عطرها</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="products.html" class="overlay-link">برندها</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="products.html" class="overlay-link">جدیدترین ها</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="products.html" class="overlay-link">فروشگاه</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="index.html" class="overlay-link">مدیریت حساب</a>
+                </li>
+                <li class="overlay-item">
+                    <a href="contact-us.html" class="overlay-link">تماس با ما</a>
+                </li>
+            </ul>
+            <div class="d-flex justify-content-around mt-5">
+                <a href="#" type="text/html" class="overlay-social-icon mr-1"><i class="fa fa-instagram"
+                                                                                 aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="overlay-social-icon mr-1"><i class="fa fa-whatsapp"
+                                                                                 aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="overlay-social-icon mr-1"><i class="fa fa-twitter"
+                                                                                 aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="overlay-social-icon mr-1"><i class="fa fa-facebook"
+                                                                                 aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <!-------------------------------------------- Header ------------------------------------------------------>
+        <div class="header-top pt-3 pb-1 px-md-4 d-lg-flex justify-content-between d-block">
+            <p class="h5 text-center ">پشتیبانی 24 ساعته : <a href="tel:+989150899335" type="text/html"
+                                                              class="header-phone">09150899335 </a>
+            </p>
+            <div class="d-none d-lg-flex justify-content-around header-icon">
+                <a href="#" type="text/html" class="header-social-icon mr-4"><i class="fa fa-instagram"
+                                                                                aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="header-social-icon mr-4"><i class="fa fa-whatsapp"
+                                                                                aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="header-social-icon mr-4"><i class="fa fa-twitter"
+                                                                                aria-hidden="true"></i></a>
+                <a href="#" type="text/html" class="header-social-icon mr-4"><i class="fa fa-facebook"
+                                                                                aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <!-------------------------------------------- Search and Login ------------------------------------------------------>
+        <div class="pt-3 px-5 search-section">
+            <div class="container">
+                <div class="row">
+                    <!-------------------------------------------- Account ------------------------------------------------------>
+                    <div class="col-12 col-md-3 mx-auto order-1 order-md-2 pt-2 pt-md-0 d-none d-md-block ">
+                        <div class="d-md-flex justify-content-end d-block">
+                            <figure class="log-icon d-none d-md-flex">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                </svg>
+                            </figure>
+                            <p class="text-center"><a href="../panel/index.html" type="text/html"
+                                                      class="log-link log-line mr-0 mr-md-2">مدیریت حساب</a></p>
+                        </div>
+                    </div>
+                    <!-------------------------------------------- Search ------------------------------------------------------>
+                    <div class="col-12 col-md-6 mx-auto w-100 order-2 my-3 my-md-0 order-md-1">
+                        <input type="search" class="search-input text-right pr-2" placeholder="جستجو ... ">
+                        <button class="search-btn btn text-center">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd"
+                                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-------------------------------------------- Buy bag ------------------------------------------------------>
+                    <div class="col-12 d-md-block col-md-3 mx-auto order-0 order-md-0 d-none d-md-block">
+                        <div class="d-block d-md-flex justify-content-center justify-content-md-start">
+                            <div class="order-1 order-md-0">
+                                <figure class="buy-icon text-center text-md-right">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-basket"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                                    </svg>
+                                </figure>
+                            </div>
+                            <div class="mr-3 text-center text-md-right order-0 order-md-1">
+                                <p class="h4 buy-title"><a href="card.html" class="buy-title">سبد خرید</a></p>
+                                <p class="h6 but-subtitle">2,770,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------- Product List ------------------------------------------------------>
+        <div>
+            <nav class="nav navbar-expand-md d-none d-md-flex p-3">
+                <div class="container">
+                    <ul class="navbar-nav d-flex justify-content-around">
+                        <li class="product-nav-item">
+                            <a href="../../index.html" class="product-nav-link">صفحه اصلی</a>
+                        </li>
+                        <li class="product-nav-item">
+                            <a href="perfumes.html" class="product-nav-link">عطرها</a>
+                        </li>
+                        <li class="product-nav-item">
+                            <a href="perfumes.html" class="product-nav-link">برندها</a>
+                        </li>
+                        <li class="product-nav-item">
+                            <a href="perfumes.html" class="product-nav-link">جدیدترین ها</a>
+                        </li>
+                        <li class="product-nav-item">
+                            <a href="contact-us.html" class="product-nav-link">تماس با ما</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-------------------------------------------- Main ------------------------------------------------------>
+    <div class="container card-page">
+        <div class="row py-5">
+            <!-------------------------------------------- Items ------------------------------------------------------>
+            <div class="col-12 col-md-7">
+                <div class="img-upper text-center">
+                    <img src="../../ViewDist//IMG/title-before.png" class="img-fluid" alt="">
+                </div>
+                <div class="media main-border flex-column flex-md-row-reverse p-3">
+                    <!-------------------------------------------- Text ------------------------------------------------------>
+                    <div class="media-body card-item px-3 w-100 text-right order-1 order-md-0">
+                        <p class="h4 text-center">Yves Saint Laurent Black</p>
+                        <p class="card-color"> Rose Gold</p>
+                        <p>
+                            <span>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd"
+        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+</svg>
+                            </span>
+                            Guarranty
+                        </p>
+                        <p class="h3" id="card-inner-price-show">200,000 تومان</p>
+                        <div class="d-flex align-items-center justify-content-between mt-2 py-3">
+                            <a href="#" class="card-trash pt-2">
+                            <span>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd"
+        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg>
+                            </span>
+                                حذف
+                            </a>
+                            <div class="d-flex justify-content-between w-50 border align-items-center p-3 rounded">
+                                <button class="card-add" id="card-add-link">&plus;</button>
+                                <p class="card-show p-0 m-0" id="cardCount">1</p>
+                                <button class="card-add" id="card-low-link">&minus;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------------------------------------- Image ------------------------------------------------------>
+                    <div class="text-center w-100-c order-0 order-md-1">
+                        <img src="../../ViewDist//IMG/2.jpg" class="img-fluid"
+                             alt="Weblog"/>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------- Details ------------------------------------------------------>
+            <div class="col-12 col-md-5 mt-4 mt-md-0">
+                <div class="img-upper text-center d-none d-md-block">
+                    <img src="../../ViewDist//IMG/title-before.png" class="img-fluid" alt="">
+                </div>
+                <div class="main-border px-3 py-3">
+                    <p class="h4">جمع : <span id="card-price">200,000</span> تومان</p>
+                    <p class="h4">هزینه ارسال : <span id="card-convert-price">9,000</span> تومان</p>
+                    <hr>
+                    <p class="h4">مبلغ قابل
+                        پرداخت : <span id="card-total-price">209,000</span> تومان</p>
+                    <button class="btn btn-block register-btn my-4">
+                        پرداخت
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------- Footer ------------------------------------------------------>
+<div class="img-upper text-center mt-5">
+    <img src="../../ViewDist/IMG/title-before.png" class="img-fluid" alt="">
+</div>
+<footer class="px-5 pt-5 pb-0 bg-dark">
+    <div class="container">
+        <div class="row">
+            <!-------------------------------------------- Links ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-0 order-md-0 pt-3 pt-md-0">
+                <p class="h4 footer-link-title text-center text-md-right">لینک های مفید</p>
+                <ul class="list-unstyled text-center text-md-right">
+                    <li>
+                        <a href="../../index.html" class="footer-link">صفحه اصلی</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html" class="footer-link">تماس با ما</a>
+                    </li>
+                    <li>
+                        <a href="perfumes.html" class="footer-link">محصولات</a>
+                    </li>
+                    <li>
+                        <a href="../en/index.html" class="footer-link">English</a>
+                    </li>
+                </ul>
+            </div>
+            <!-------------------------------------------- Location ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-1 order-md-2 pt-3 pt-md-0">
+                <p class="footer-link-title text-light h4 text-center text-md-right">راههای ارتباطی</p>
+                <ul class="list-unstyled text-center text-md-right">
+                    <li>
+                            <span class="footer-text-icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shop-window"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+                                </svg>
+                            </span>
+                        <span class="footer-link">ایران , مشهد</span>
+                    </li>
+                    <li class="pt-1">
+                        <a href="#" class="footer-link">
+                                <span class="footer-text-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                    </svg>
+                                </span>
+                            <a href="tel:05133232333" class="footer-link">051-3323-2333</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                                <span class="footer-text-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-phone"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M11 1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                                        <path fill-rule="evenodd" d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                    </svg>
+                                </span>
+                            <a href="tel:+989150899335" class="footer-link">09150899335</a>
+                        </a>
+                    </li>
+                    <li class="footer-link-c">
+                            <span class="footer-text-icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-headset"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M8 1a5 5 0 0 0-5 5v4.5H2V6a6 6 0 1 1 12 0v4.5h-1V6a5 5 0 0 0-5-5z"/>
+                                    <path
+                                            d="M11 8a1 1 0 0 1 1-1h2v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8zM5 8a1 1 0 0 0-1-1H2v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V8z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M13.5 8.5a.5.5 0 0 1 .5.5v3a2.5 2.5 0 0 1-2.5 2.5H8a.5.5 0 0 1 0-1h3.5A1.5 1.5 0 0 0 13 12V9a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M6.5 14a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1z"/>
+                                </svg>
+                            </span>
+                        پشتیبانی : <a href="tel:09150899335" class="footer-link">09150899335</a>
+                    </li>
+                </ul>
+            </div>
+            <!-------------------------------------------- Logo ------------------------------------------------------>
+            <div class="col-12 col-md-3 order-3 order-md-3">
+                <div class="d-block d-md-flex justify-content-end">                
+                    <div class="d-flex justify-content-center mt-3 mt-md-0">
+                        <div class="footer-logo">
+                            <img src="../../ViewDist/IMG/title-before.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------- Icons ------------------------------------------------------>
+    <div class="d-flex justify-content-center mt-4 back-line">
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-telegram"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" class="btn footer-icon">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+    </div>
+    <p class="text-muted text-center mt-3 pb-3 mb-0">طراحی شده توسط جواد محمدی</p>
+</footer>
+</body>
+
+<script src="../../ViewDist//js/jquery.min.js"></script>
+<script src="../../ViewDist//js/popper.min.js"></script>
+<script src="../../ViewDist//js/plugins.js"></script>
+<script src="../../ViewDist//js/Main.js"></script>
+</html>
