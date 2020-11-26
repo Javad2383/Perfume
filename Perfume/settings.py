@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_render_partial',
     # ------------ My App -------------
     'Product',
     'Tag',
     'Category',
+    'Brand'
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,4 @@
+<p><a class="filter_link" href="{% url 'Product:product_list' %}">همه</a></p>
+{% for item in category %}
+    <p><a class="filter_link" href="{% url 'Product:product_category' category_name=item.name %}">{{ item.title }}</a></p>
+{% endfor %}

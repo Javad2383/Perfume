@@ -1,0 +1,4 @@
+<p><a href="{% url 'Product:product_list' %}" class="filter_link">همه</a></p>
+{% for item in brands %}
+    <p><a href="{% url 'Product:product_brand' barnd_name=item.name %}" class="filter_link">{{ item.title }}</a></p>
+{% endfor %}

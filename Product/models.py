@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models import Q
 from Category.models import ProductCategory
+from Brand.models import Product_Brand
+
 
 # Create your models here.
 
@@ -14,10 +16,18 @@ class ProductManager(models.Manager):
                 Q(tag__title__icontains=query) |
                 Q(title__icontains=query) |
                 Q(description__icontains=query) |
-                Q(slug__icontains=query)
-                  )
-        return self.get_queryset().filter(lookup, active=True)
+                Q(slug__icontains=query) |
+                Q(brand__name__icontains=query) |
+                Q(brand__title__icontains=query) &
+                Q(active=True)
+        )
+        return self.get_queryset().filter(lookup)
 
+    def get_category(self, query):
+        return self.get_queryset().filter(active=True, category__name__iexact=query)
+
+    def get_brand(self, query):
+        return self.get_queryset().filter(active=True, brand__name__icontains=query)
 
 class Product(models.Model):
     title = models.CharField(max_length=120, verbose_name="عنوان")
@@ -28,6 +38,7 @@ class Product(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(default="Product")
     category = models.ManyToManyField(ProductCategory, blank=True, verbose_name="دسته بندی ها")
+    brand = models.ManyToManyField(Product_Brand, blank=True, verbose_name="برند")
 
     objects = ProductManager()
 

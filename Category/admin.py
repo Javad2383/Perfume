@@ -12,4 +12,4 @@ class CategoryAdmin(admin.ModelAdmin):
         model = ProductCategory
 
 
-admin.site.register(ProductCategory)
+admin.site.register(ProductCategory, CategoryAdmin)

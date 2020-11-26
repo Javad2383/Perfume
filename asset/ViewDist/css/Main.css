@@ -1063,3 +1063,12 @@ span.footer-link:hover {
 .page_active{
     background: rgba(219, 200, 170, .4) !important;
 }
+
+.filter_link {
+    text-decoration: none !important;
+    color: var(--mainBlack);
+}
+
+.filter_link:hover{
+    color: var(--mainBlue);
+}

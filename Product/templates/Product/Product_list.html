@@ -1,5 +1,6 @@
 {% extends '_mainLayout.html' %}
 {% load static %}
+{% load render_partial %}
 {% block main_content %}
     <!--------------------------- Items --------------------------------------------->
     <section class="mb-5 mt-2 perfume-page">
@@ -17,7 +18,7 @@
             </section>
             <div class="row">
                 <!--------------------------- Fliter --------------------------------------------->
-                <div class="col-12 mx-auto">
+                <div class="col-12 col-md-4 mx-auto">
                     <div class="img-upper text-center">
                         <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
                     </div>
@@ -53,25 +54,25 @@
                             </button>
                             <!--------------------------- Brands Item --------------------------------------------->
                             <div class="collapse perfume-list" id="brands-col">
-                                <input type="checkbox" name="brandCheck px-3" id="kalis">
-                                <label for="kalis">کلیس بکر</label> <br>
+                                {% render_partial 'Product:product_brand_filter' %}
                             </div>
                         </div>
-                        <!--------------------------- Seller --------------------------------------------->
+                        <!--------------------------- Category --------------------------------------------->
                         <div class="border-top">
                             <button class="btn btn-block perfume-btn" data-toggle="collapse" data-target="#seller-col"
-                                    aria-controls="seller-col" aria-expanded="false">فروشندگان
+                                    aria-controls="seller-col" aria-expanded="false">دسته بندی ها
                             </button>
-                            <!--------------------------- Seller Item --------------------------------------------->
-                            <div class="collapse perfume-list" id="seller-col">
-                                <input type="checkbox" name="sellerCheck" id="sellerCheck1">
-                                <label for="sellerCheck1">آنتوان لی</label> <br>
+                            <!--------------------------- Category Item --------------------------------------------->
+                            <div class="collapse perfume-list p-3" id="seller-col">
+                                <div>
+                                    {% render_partial 'Product:product_category_filter' %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--------------------------- Items --------------------------------------------->
-                <div class="col-12 mx-auto mt-4">
+                <div class="col-12 col-md-8 mx-auto mt-4 mt-md-0">
                     <div class="img-upper text-center">
                         <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
                     </div>
