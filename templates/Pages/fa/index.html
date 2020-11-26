@@ -41,7 +41,7 @@
             </div>
         </div>
     </section>
-    <!-------------------------------------------- Offer ------------------------------------------------------>
+    <!-------------------------------------------- Featured ------------------------------------------------------>
     <section class="mt-5">
         <div class="container">
             <div class="img-upper text-center">
@@ -53,67 +53,67 @@
                         <div class="b-border d-block d-md-flex justify-content-between px-3 py-4">
                             <p class="h3 text-center">پیشنهاد <span class="offer-text"> شگفت انگیز</span></p>
                             <p class="h5 news-text text-center order-1 pt-3 pt-md-0">
-                                <a href="http://basic.zaam/site/perfumes?" class="more-link">نمایش بیشتر +</a>
+                                <a href="{% url 'Product:product_list' %}" class="more-link">نمایش بیشتر +</a>
                             </p>
                         </div>
                         <div>
                             <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
-                                data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
-                                data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
-                                data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
-                                data-xl-nav="true" data-dots="false">
+                                 data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
+                                 data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
+                                 data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
+                                 data-xl-nav="true" data-dots="false">
                                 <!-------------------------------------------- Items ------------------------------------------------------>
-                                <div class="item">
-                                    <div class="card main-card">
-                                        <img src="{% static 'ViewDist/IMG/2.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="First">
-                                        <div class="card-img-overlay">
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                {% for item in featured %}
+                                    <div class="item">
+                                        <div class="card main-card">
+                                            <img src="{{ item.image.url }}"
+                                                 class="img-fluid card-img-top w-auto"
+                                                 alt="First">
+                                            <div class="card-img-overlay">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-male"></i>
                                                 </a></p>
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-sun"></i>
                                                 </a></p>
-                                        </div>
-                                        <div class="card-body card-cursor">
-                                            <div class=" d-flex justify-content-center">
-                                                <p class="star-parent">
-                                                    <i class="far fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
                                             </div>
-                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
-                                            <div class="d-md-flex d-block justify-content-around">
-                                                <p class="text-center">
-                                                    <del>1,210,400</del>
-                                                </p>
-                                                <p class="text-center">1,200,000 تومان</p>
-                                            </div>
-                                            <div class="d-flex justify-content-around">
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="las la-share"></i>
-                                                </button>
-                                                <button class="btn orange-btn btn-text p-2 mr-1">
-                                                    افزودن به سبد خرید
-                                                </button>
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="far fa-heart"></i>
-                                                </button>
+                                            <div class="card-body card-cursor">
+                                                <div class=" d-flex justify-content-center">
+                                                    <p class="star-parent">
+                                                        <i class="far fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                </div>
+                                                <p class="text-center font-weight-bold">{{ item.title }}</p>
+                                                <div class="d-md-flex d-block justify-content-around">
+                                                    <p class="text-center">{{ item.price }} تومان</p>
+                                                </div>
+                                                <div class="d-flex justify-content-around">
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="las la-share"></i>
+                                                    </button>
+                                                    <a href="{% url 'Product:product_detail' pk=item.id slug=item.slug %}" class="btn orange-btn btn-text p-2 px-3 mr-1">
+                                                        مشاهده
+                                                    </a>
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="far fa-heart"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -190,27 +190,28 @@
                         <div class="b-border d-block d-md-flex justify-content-between px-3 py-4">
                             <p class="h3 text-center order-0">جدیدترین ها</p>
                             <p class="h5 news-text text-center order-1 pt-3 pt-md-0">
-                                <a href="http://basic.zaam/site/perfumes?" class="more-link">نمایش بیشتر +</a>
+                                <a href="{% url 'Product:product_list' %}" class="more-link">نمایش بیشتر +</a>
                             </p>
                         </div>
                         <div>
                             <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
-                                data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
-                                data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
-                                data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
-                                data-xl-nav="true" data-dots="false">
+                                 data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
+                                 data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
+                                 data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
+                                 data-xl-nav="true" data-dots="false">
                                 <!-------------------------------------------- Items ------------------------------------------------------>
                                 <div class="item">
                                     <div class="card main-card">
-                                        <img src="{% static 'ViewDist/IMG/3.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="First">
+                                        <img src="{% static 'ViewDist/IMG/3.jpg' %}"
+                                             class="img-fluid card-img-top w-auto"
+                                             alt="First">
                                         <div class="card-img-overlay">
                                             <p><a href="#" class="card-link img-overlay-c">
-                                                    <i class="fas fa-male"></i>
-                                                </a></p>
+                                                <i class="fas fa-male"></i>
+                                            </a></p>
                                             <p><a href="#" class="card-link img-overlay-c">
-                                                    <i class="fas fa-sun"></i>
-                                                </a></p>
+                                                <i class="fas fa-sun"></i>
+                                            </a></p>
                                         </div>
                                         <div class="card-body card-cursor">
                                             <div class=" d-flex justify-content-center">
@@ -275,86 +276,6 @@
             </div>
         </div>
     </section>
-    <!-------------------------------------------- Best Item ------------------------------------------------------>
-    <section class="mt-5">
-        <div class="container">
-            <div class="img-upper text-center">
-                <img src="{% static 'ViewDist/IMG/title-before.png' %}" class="img-fluid" alt="">
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="main-border shadow-sm">
-                        <div class="b-border d-block d-md-flex justify-content-between px-3 py-4">
-                            <p class="h3 text-center order-0">محصولات پرفروش</p>
-                            <p class="h5 news-text text-center order-10 pt-3 pt-md-0">
-                                <a href="http://basic.zaam/site/perfumes?" class="more-link">نمایش بیشتر +</a>
-                            </p>
-                        </div>
-                        <div>
-                            <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
-                                data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
-                                data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
-                                data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
-                                data-xl-nav="true" data-dots="false">
-                                <!-------------------------------------------- Items ------------------------------------------------------>
-                                <div class="item">
-                                    <div class="card main-card">
-                                        <img src="{% static 'ViewDist/IMG/1.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="First">
-                                        <div class="card-img-overlay">
-                                            <p><a href="#" class="card-link img-overlay-c">
-                                                    <i class="fas fa-male"></i>
-                                                </a></p>
-                                            <p><a href="#" class="card-link img-overlay-c">
-                                                    <i class="fas fa-sun"></i>
-                                                </a></p>
-                                        </div>
-                                        <div class="card-body card-cursor">
-                                            <div class=" d-flex justify-content-center">
-                                                <p class="star-parent">
-                                                    <i class="far fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                            </div>
-                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
-                                            <div class="d-md-flex d-block justify-content-around">
-                                                <p class="text-center">
-                                                    <del>1,210,400</del>
-                                                </p>
-                                                <p class="text-center">1,200,000 تومان</p>
-                                            </div>
-                                            <div class="d-flex justify-content-around">
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="las la-share"></i>
-                                                </button>
-                                                <button class="btn orange-btn btn-text p-2 mr-1">
-                                                    افزودن به سبد خرید
-                                                </button>
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="far fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-------------------------------------------- Featured Item ------------------------------------------------------>
     <section class="mt-5">
         <div class="container">
@@ -367,67 +288,67 @@
                         <div class="b-border d-block d-md-flex justify-content-between px-3 py-4">
                             <p class="h3 text-center order-0">اختصاصی <span class="featured-text">عطر پدیده </span></p>
                             <p class="h5 news-text text-center order-1 pt-3 pt-md-0"><a
-                                    href="http://basic.zaam/site/perfumes?" class="more-link">نمایش
-                                    بیشتر +</a></p>
+                                    href="{% url 'Product:product_list' %}" class="more-link">نمایش
+                                بیشتر +</a></p>
                         </div>
                         <div>
                             <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
-                                data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
-                                data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
-                                data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
-                                data-xl-nav="true" data-dots="false">
+                                 data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
+                                 data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
+                                 data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
+                                 data-xl-nav="true" data-dots="false">
                                 <!-------------------------------------------- Items ------------------------------------------------------>
-                                <div class="item">
-                                    <div class="card main-card">
-                                        <img src="{% static 'ViewDist/IMG/5.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="First">
-                                        <div class="card-img-overlay">
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                {% for item in featured %}
+                                    <div class="item">
+                                        <div class="card main-card">
+                                            <img src="{{ item.image.url }}"
+                                                 class="img-fluid card-img-top w-auto"
+                                                 alt="First">
+                                            <div class="card-img-overlay">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-male"></i>
                                                 </a></p>
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-sun"></i>
                                                 </a></p>
-                                        </div>
-                                        <div class="card-body card-cursor">
-                                            <div class=" d-flex justify-content-center">
-                                                <p class="star-parent">
-                                                    <i class="far fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
                                             </div>
-                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
-                                            <div class="d-md-flex d-block justify-content-around">
-                                                <p class="text-center">
-                                                    <del>1,210,400</del>
-                                                </p>
-                                                <p class="text-center">1,200,000 تومان</p>
-                                            </div>
-                                            <div class="d-flex justify-content-around">
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="las la-share"></i>
-                                                </button>
-                                                <button class="btn orange-btn btn-text p-2 mr-1">
-                                                    افزودن به سبد خرید
-                                                </button>
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="far fa-heart"></i>
-                                                </button>
+                                            <div class="card-body card-cursor">
+                                                <div class=" d-flex justify-content-center">
+                                                    <p class="star-parent">
+                                                        <i class="far fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                </div>
+                                                <p class="text-center font-weight-bold">{{ item.title }}</p>
+                                                <div class="d-md-flex d-block justify-content-around">
+                                                    <p class="text-center">{{ item.price }} تومان</p>
+                                                </div>
+                                                <div class="d-flex justify-content-around">
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="las la-share"></i>
+                                                    </button>
+                                                    <a href="{% url 'Product:product_detail' pk=item.id slug=item.slug %}" class="btn orange-btn btn-text p-2 px-3 mr-1">
+                                                        مشاهده
+                                                    </a>
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="far fa-heart"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -449,7 +370,7 @@
             </div>
         </div>
     </section>
-    <!-------------------------------------------- News Weblog ------------------------------------------------------>
+    <!-------------------------------------------- Best Item ------------------------------------------------------>
     <section class="mt-5">
         <div class="container">
             <div class="img-upper text-center">
@@ -459,36 +380,66 @@
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="main-border shadow-sm">
                         <div class="b-border d-block d-md-flex justify-content-between px-3 py-4">
-                            <p class="h3 text-center order-0">جدیدترین مطالب <span
-                                    class="featured-text mt-2 mt-md-0">وبلاگ</span>
+                            <p class="h3 text-center order-0">محصولات پرفروش</p>
+                            <p class="h5 news-text text-center order-10 pt-3 pt-md-0">
+                                <a href="{% url 'Product:product_list' %}" class="more-link">نمایش بیشتر +</a>
                             </p>
-                            <p class="h5 news-text text-center order-1 pt-3 pt-md-0"><a
-                                    href="http://basic.zaam/site/perfumes?" class="more-link">نمایش
-                                    بیشتر +</a></p>
                         </div>
                         <div>
-                            <div class="owl-carousel p-0 owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
-                                data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
-                                data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
-                                data-padding="0" data-loop="true" data-rtl="true" data-nav="false" data-lg-nav="false"
-                                data-xl-nav="false" data-dots="false">
+                            <div class="owl-carousel owl-theme my-40 blog-items" data-items="4" data-sm-items="1"
+                                 data-lg-items="3" data-md-items="2" data-margin="0" data-autoplay="true"
+                                 data-pause="true" data-autoplay-timeout="2000" data-lg-padding="0" data-xl-padding="0"
+                                 data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
+                                 data-xl-nav="true" data-dots="false">
+                                <!-------------------------------------------- Items ------------------------------------------------------>
                                 <div class="item">
-                                    <div class="card main-card p-0">
-                                        <img src="{% static 'ViewDist/IMG/16.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="Weblog">
-                                        <div class="card-body">
-                                            <p class="text-center font-weight-bold">بهترین زوج های عطری 2020</p>
-                                            <p class="text-justify">
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                                از طراحان گرافیک استن بلکهو کاربردهای
-                                                متنوع با هدف می باشد ...
-                                            </p>
-                                            <div class="d-flex justify-content-between pb-0 mb-0 px-0">
-                                                <p class="text-muted weblog-subtext pb-0 mb-0">4 دی 98 <span><i class="las la-calendar-alt"></i></span></p>
-                                                <p class="text-muted weblog-subtext pb-0 mb-0">23 <span><i class="las la-eye"></i></span></p>
-                                                <p class="weblog-text pb-0 mb-0">
-                                                    <a href="#" class="weblog-text">مشاهده بیشتر</a>
+                                    <div class="card main-card">
+                                        <img src="{% static 'ViewDist/IMG/1.jpg' %}"
+                                             class="img-fluid card-img-top w-auto"
+                                             alt="First">
+                                        <div class="card-img-overlay">
+                                            <p><a href="#" class="card-link img-overlay-c">
+                                                <i class="fas fa-male"></i>
+                                            </a></p>
+                                            <p><a href="#" class="card-link img-overlay-c">
+                                                <i class="fas fa-sun"></i>
+                                            </a></p>
+                                        </div>
+                                        <div class="card-body card-cursor">
+                                            <div class=" d-flex justify-content-center">
+                                                <p class="star-parent">
+                                                    <i class="far fa-star"></i>
                                                 </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                                <p class="star-parent">
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                            </div>
+                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
+                                            <div class="d-md-flex d-block justify-content-around">
+                                                <p class="text-center">
+                                                    <del>1,210,400</del>
+                                                </p>
+                                                <p class="text-center">1,200,000 تومان</p>
+                                            </div>
+                                            <div class="d-flex justify-content-around">
+                                                <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                    <i class="las la-share"></i>
+                                                </button>
+                                                <button class="btn orange-btn btn-text p-2 mr-1">
+                                                    افزودن به سبد خرید
+                                                </button>
+                                                <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

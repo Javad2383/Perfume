@@ -1,5 +1,6 @@
 {% spaceless %}
     {% load static %}
+    {% load render_partial %}
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -14,11 +15,11 @@
     </head>
     <body>
     {############### Header #######################}
-    {% include 'Layouts/Header.html' %}
+    {% render_partial 'header_section' %}
     {############### Body #######################}
     {% block main_content %}{% endblock %}
     {############### Footer #######################}
-    {% include 'Layouts/Footer.html' %}
+    {% render_partial 'footer_section' %}
     {############### Javascript #######################}
     {% include 'Links/js.html' %}
     </body>

@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_render_partial',
     # ------------ My App -------------
+    'Site_setting',
     'Product',
     'Tag',
     'Category',
-    'Brand'
+    'Brand',
+    'Contact_us'
 ]
 
 MIDDLEWARE = [

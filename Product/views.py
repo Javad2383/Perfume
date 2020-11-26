@@ -24,7 +24,7 @@ def Product_Brand_Filter(request):
 class Product_List(ListView):
     template_name = 'Product/Product_list.html'
     context_object_name = "objects"
-    paginate_by = 12
+    paginate_by = 6
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(Product_List, self).get_context_data()
@@ -43,13 +43,16 @@ class Product_Detail(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(Product_Detail, self).get_context_data()
         context["page_title"] = "Product Detail"
+        pk = self.kwargs.get('pk')
+        product = Product.objects.get_queryset().filter(category__product=pk).distinct()
+        context["relate"] = product
         return context
 
 
 class Product_List_Search(ListView):
     template_name = 'Product/Product_list.html'
     context_object_name = "objects"
-    paginate_by = 12
+    paginate_by = 6
 
     def get_queryset(self):
         request = self.request
@@ -62,7 +65,7 @@ class Product_List_Search(ListView):
 class Product_Category(ListView):
     template_name = 'Product/Product_list.html'
     context_object_name = "objects"
-    paginate_by = 12
+    paginate_by = 6
 
     def get_queryset(self):
         category_name = self.kwargs["category_name"]
@@ -76,7 +79,7 @@ class Product_Category(ListView):
 class Product_Brand_List(ListView):
     template_name = 'Product/Product_list.html'
     context_object_name = "objects"
-    paginate_by = 12
+    paginate_by = 6
 
     def get_queryset(self):
         brand_name = self.kwargs["barnd_name"]

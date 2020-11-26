@@ -6,9 +6,12 @@ from .views import *
 
 app_name = "Perfume"
 urlpatterns = [
+    path('header_section', Header, name="header_section"),
+    path('footer_section', Footer, name="footer_section"),
     # Pages
     path('', Home_Page, name="home_page"),
     # Include
+    path('', include('Contact_us.urls', namespace='ContactUs')),
     path('products/', include('Product.urls', namespace='Product')),
     # Admin
     path('admin/', admin.site.urls)

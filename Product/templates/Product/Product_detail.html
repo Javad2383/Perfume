@@ -10,7 +10,8 @@
             <a href="{% url 'Product:product_list' %}" class="breadcrumb-link">عطر ها</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{% url 'Product:product_detail' pk=object.id slug=object.slug %}" class="breadcrumb-link">{{ object.title }}</a>
+            <a href="{% url 'Product:product_detail' pk=object.id slug=object.slug %}"
+               class="breadcrumb-link">{{ object.title }}</a>
         </li>
     </ul>
     <!--------------------------- Specifications --------------------------------------------->
@@ -276,57 +277,57 @@
                                  data-padding="0" data-loop="true" data-rtl="true" data-nav="true" data-lg-nav="true"
                                  data-xl-nav="true" data-dots="false">
                                 <!-------------------------------------------- Items ------------------------------------------------------>
-                                <div class="item">
-                                    <div class="card main-card">
-                                        <img src="{% static 'ViewDist/IMG/3.jpg' %}" class="img-fluid card-img-top w-auto"
-                                            alt="First">
-                                        <div class="card-img-overlay">
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                {% for item in relate %}
+                                    <div class="item">
+                                        <div class="card main-card">
+                                            <img src="{{ item.image.url }}"
+                                                 class="img-fluid card-img-top w-auto"
+                                                 alt="First">
+                                            <div class="card-img-overlay">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-male"></i>
                                                 </a></p>
-                                            <p><a href="#" class="card-link img-overlay-c">
+                                                <p><a href="#" class="card-link img-overlay-c">
                                                     <i class="fas fa-sun"></i>
                                                 </a></p>
-                                        </div>
-                                        <div class="card-body card-cursor">
-                                            <div class=" d-flex justify-content-center">
-                                                <p class="star-parent">
-                                                    <i class="far fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                                <p class="star-parent">
-                                                    <i class="fas fa-star"></i>
-                                                </p>
                                             </div>
-                                            <p class="text-center font-weight-bold">Yves Saint Laurent Black</p>
-                                            <div class="d-md-flex d-block justify-content-around">
-                                                <p class="text-center">
-                                                    <del>1,210,400</del>
-                                                </p>
-                                                <p class="text-center">1,200,000 تومان</p>
-                                            </div>
-                                            <div class="d-flex justify-content-around">
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="las la-share"></i>
-                                                </button>
-                                                <button class="btn orange-btn btn-text p-2 mr-1">
-                                                    افزودن به سبد خرید
-                                                </button>
-                                                <button class="btn orange-btn p-2 hide-btn mr-1">
-                                                    <i class="far fa-heart"></i>
-                                                </button>
+                                            <div class="card-body card-cursor">
+                                                <div class=" d-flex justify-content-center">
+                                                    <p class="star-parent">
+                                                        <i class="far fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                    <p class="star-parent">
+                                                        <i class="fas fa-star"></i>
+                                                    </p>
+                                                </div>
+                                                <p class="text-center font-weight-bold">{{ item.title }}</p>
+                                                <div class="d-md-flex d-block justify-content-around">
+                                                    <p class="text-center">{{ item.price }} تومان</p>
+                                                </div>
+                                                <div class="d-flex justify-content-around">
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="las la-share"></i>
+                                                    </button>
+                                                    <a href="{% url 'Product:product_detail' pk=item.pk slug=item.slug %}" class="btn orange-btn btn-text p-2 mr-1">
+                                                        مشاهده
+                                                    </a>
+                                                    <button class="btn orange-btn p-2 hide-btn mr-1">
+                                                        <i class="far fa-heart"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,106 @@
+{% extends '_mainLayout.html' %}
+{% load static %}
+
+{% block main_content %}
+    <!--------------------------- Address --------------------------------------------->
+    <section class="contact-us-page">
+        <ul class="breadcrumb px-5 pt-4 container">
+            <li class="breadcrumb-item">
+                <a href="{% url 'home_page' %}" class="breadcrumb-link">صفحه اصلی</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'ContactUs:contact_us' %}" class="breadcrumb-link">تماس با ما</a>
+            </li>
+        </ul>
+    </section>
+    <!--------------------------- Title --------------------------------------------->
+    <section class="text-center">
+        <h1>تماس با ما</h1>
+        <h3>لفطا نظراتتان را با ما در میان بگذارید</h3>
+        <hr>
+    </section>
+    <!--------------------------- Main --------------------------------------------->
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <!--------------------------- Details --------------------------------------------->
+                <div class="col-12 col-md-6 mx-auto">
+                    <!--------------------------- Address --------------------------------------------->
+                    <div class="d-flex align-items-center">
+                        <span class="contact-svg-icon m-0 p-0">
+                            <i class="lar la-building"></i>
+                        </span>
+                        <div class="mr-3">
+                            <p class="h5">آدرس دفتر مرکزی</p>
+                            <p>{{ setting.address }}</p>
+                        </div>
+                    </div>
+                    <!--------------------------- Phone --------------------------------------------->
+                    <div class="d-flex align-items-center mt-3 mt-md-5">
+                        <span class="contact-svg-icon m-0 p-0">
+                           <i class="las la-phone"></i>
+                        </span>
+                        <div class="mr-3">
+                            <p class="h5">تلفن</p>
+                            <p>امور رسیدگی به مشترین : <a href="tel:{{ setting.Phone }}" class="contact-details-link">{{ setting.Phone }}</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!--------------------------- Email --------------------------------------------->
+                    <div class="d-flex align-items-center mt-3 mt-md-5">
+                        <span class="contact-svg-icon m-0 p-0">
+                            <i class="las la-envelope"></i>
+                        </span>
+                        <div class="mr-3">
+                            <p class="h5">ایمیل</p>
+                            <a href="#" class="contact-details-link">{{ setting.email }}</a>
+                        </div>
+                    </div>
+                    <!--------------------------- Clock --------------------------------------------->
+                    <div class="d-flex align-items-center mt-4 mt-md-5">
+                        <span class="contact-svg-icon m-0 p-0">
+                            <i class="lar la-clock"></i>
+                        </span>
+                        <div class="mr-3">
+                            <p class="h5">ساعت کاری</p>
+                            <p>همه روزه از 8 تا 21</p>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------- Form --------------------------------------------->
+                <div class="col-12 col-md-6 mx-auto mt-3 mt-md-0">
+                    <form action="{% url 'ContactUs:contact_us' %}" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 col-md-6 mx-auto">
+                                <input type="text" name="full_name" placeholder="نام و نام خانوادگی ..." class="form-inputs px-3 py-1">
+                            </div>
+                            <div class="col-12 col-md-6 mx-auto mt-4 mt-md-0">
+                                <input type="email" name="email" placeholder="ایمیل ..." class="form-inputs px-3 py-1">
+                            </div>
+                            <div class="col-12 col-md-12 mt-4 mx-auto">
+                                <input type="text" name="subject" placeholder="عنوان ..." class="form-inputs px-3 py-1">
+                            </div>
+                            <div class="col-12 col-md-12 mt-4 mx-auto">
+                                <textarea cols="40" name="text" rows="8" placeholder="متن پیام ..."
+                                          class="form-inputs px-3 py-1 contact-textarea"></textarea>
+                            </div>
+                            <div class="col-12 col-md-12 mt-4 mx-auto">
+                                <button class="btn btn-contact btn-block">ارسال پیام</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------- Map --------------------------------------------->
+    <section>
+        <div class="mt-5 mb-5" style="width: 100%">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2054.597243513376!2d59.51419274231597!3d36.31932733731972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6c9286b956d6bd%3A0xa69aafaf11fac1a6!2z2KLYqNin2YYg2b7ZhNin2LLYpw!5e0!3m2!1sfa!2s!4v1603369091669!5m2!1sfa!2s"
+                    width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+        </div>
+    </section>
+{% endblock %}

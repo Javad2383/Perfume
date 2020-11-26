@@ -32,7 +32,7 @@
                 <a href="" class="overlay-link">مدیریت حساب</a>
             </li>
             <li class="overlay-item">
-                <a href="" class="overlay-link">تماس با ما</a>
+                <a href="{% url 'ContactUs:contact_us' %}" class="overlay-link">تماس با ما</a>
             </li>
         </ul>
         <div class="d-flex justify-content-around mt-5">
@@ -48,7 +48,7 @@
     </div>
     <!-------------------------------------------- Header ------------------------------------------------------>
     <div class="header-top pt-3 pb-1 px-md-4 d-lg-flex justify-content-between d-block">
-        <p class="h5 text-center ">پشتیبانی 24 ساعته : <a href="tel:+989150899335" type="text/html"
+        <p class="h5 text-center ">پشتیبانی 24 ساعته : <a href="tel:{{ setting.Phone }}" type="text/html"
                                                           class="header-phone">09150899335 </a>
         </p>
         <div class="d-none d-lg-flex justify-content-around header-icon">
@@ -109,7 +109,7 @@
                         <a href="{% url 'home_page' %}" class="product-nav-link">صفحه اصلی</a>
                     </li>
                     <li class="product-nav-item">
-                        <a href="{% url 'Product:product_list' %}" class="product-nav-link">عطرها</a>
+                        <a href="{% url 'Product:product_list' %}" class="product-nav-link">عطر ها</a>
                     </li>
                     <li class="product-nav-item">
                         <a href="{% url 'Product:product_list' %}" class="product-nav-link">برندها</a>
@@ -118,7 +118,7 @@
                         <a href="{% url 'Product:product_list' %}" class="product-nav-link">جدیدترین ها</a>
                     </li>
                     <li class="product-nav-item">
-                        <a href="" class="product-nav-link">تماس با ما</a>
+                        <a href="{% url 'ContactUs:contact_us' %}" class="product-nav-link">تماس با ما</a>
                     </li>
                 </ul>
             </div>
