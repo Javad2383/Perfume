@@ -41,7 +41,7 @@ class Product(models.Model):
     active = models.BooleanField(default=False, verbose_name="فعال")
     featured = models.BooleanField(default=False, verbose_name="ویژه")
     time = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(default="Product")
+    slug = models.SlugField(default="Product", unique=True)
     category = models.ManyToManyField(ProductCategory, blank=True, verbose_name="دسته بندی ها")
     brand = models.ManyToManyField(Product_Brand, blank=True, verbose_name="برند")
 

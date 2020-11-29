@@ -12,6 +12,7 @@ urlpatterns = [
     path('', Home_Page, name="home_page"),
     # Include
     path('', include('Contact_us.urls', namespace='ContactUs')),
+    path('', include('Order.urls', namespace="Order")),
     path('products/', include('Product.urls', namespace='Product')),
     # Admin
     path('admin/', admin.site.urls)

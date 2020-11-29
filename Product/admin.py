@@ -11,6 +11,7 @@ class AdminManager(admin.ModelAdmin):
         'active'
     )
     search_fields = ("title", "price",)
+    list_filter = ("title", "active")
 
 
 admin.site.register(Product, AdminManager)
