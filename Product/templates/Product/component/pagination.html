@@ -1,15 +1,1 @@
-<div class="btn-group my-3 mx-auto d-flex justify-content-center">
-    {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">&rightarrow;</a>
-    {% endif %}
-    {% for page in page_obj.paginator.page_range %}
-        {% if page == page_obj.number %}
-            <a href="?page={{ page }}" class="btn page_active ml-0 ml-sm-1 perfume-lower-btn">{{ page }}</a>
-        {% else %}
-            <a href="?page={{ page }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">{{ page }}</a>
-        {% endif %}
-    {% endfor %}
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">&leftarrow;</a>
-    {% endif %}
-</div>
+<div class="btn-group my-3 mx-auto d-flex justify-content-center"> {% if page_obj.has_previous %} <a href="?page={{ page_obj.previous_page_number }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">&rightarrow;</a> {% endif %} {% for page in page_obj.paginator.page_range %} {% if page == page_obj.number %} <a href="?page={{ page }}" class="btn page_active ml-0 ml-sm-1 perfume-lower-btn">{{ page }}</a> {% else %} <a href="?page={{ page }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">{{ page }}</a> {% endif %} {% endfor %} {% if page_obj.has_next %} <a href="?page={{ page_obj.next_page_number }}" class="btn ml-0 ml-sm-1 perfume-lower-btn">&leftarrow;</a> {% endif %}</div>

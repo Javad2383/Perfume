@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'Category',
     'Brand',
     'Contact_us',
-    'Order'
+    'Order',
 ]
 
 MIDDLEWARE = [
